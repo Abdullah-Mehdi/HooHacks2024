@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import './NavBar.css'
 
 import logo from '../Assets/logo.png'
@@ -11,11 +12,12 @@ const NavBar = () => {
                 <p>Team name</p>
             </div>
             <ul className="nav-menu">
-                <li onClick={()=>{setMenu("aboutus")}}>About us{menu==="aboutus"?<hr/>:<></>}</li>
+                <li onClick={()=>{setMenu("aboutus")}}><Link to='/'>About us</Link>{menu==="aboutus"?<hr/>:<></>}</li>
+                <li onClick={()=>{setMenu("something1")}}>Something 1{menu==="something1"?<hr/>:<></>}</li>
             </ul>
 
             <div className="nav-login">
-                <button>Login</button>
+                <Link to = '/login'><button>Login</button></Link>
 
             </div>
         </div>
