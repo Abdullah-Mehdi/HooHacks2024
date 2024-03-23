@@ -12,8 +12,8 @@ const NavBar = () => {
                 <p>Team name</p>
             </div>
             <ul className="nav-menu">
-                <li onClick={()=>{setMenu("aboutus")}}><Link to='/'>About us</Link>{menu==="aboutus"?<hr/>:<></>}</li>
-                <li onClick={()=>{setMenu("something1")}}>Something 1{menu==="something1"?<hr/>:<></>}</li>
+                <li onClick={()=>{setMenu("aboutus")}}><Link style = {{ textDecoration: 'none'}} to='/aboutus'>About us</Link>{menu==="aboutus"?<hr/>:<></>}</li>
+                <li onClick={()=>{setMenu("something1")}}><Link style = {{ textDecoration: 'none'}} to='/something1'>Something 1</Link>{menu==="something1"?<hr/>:<></>}</li>
             </ul>
 
             <div className="nav-login">

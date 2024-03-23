@@ -6,7 +6,7 @@
     z-index: 1000; /* Ensure the navbar appears above other content */
     display: flex;
     justify-content: space-around;
-    padding: 16px;
+    padding: 4px;
     box-shadow: 0 1px 3px -2px black;
 }
 .nav-logo{
