@@ -1,4 +1,5 @@
 from flask import Flask, Response, jsonify, stream_with_context
+from flask_cors import CORS
 import cv2
 import numpy as np
 import mediapipe as mp
@@ -13,6 +14,7 @@ auth_token = os.getenv('TOKEN')
 client = Client(account_sid, auth_token)
 
 app = Flask(__name__)
+CORS(app)
 
 # Initialize MediaPipe Pose
 mp_pose = mp.solutions.pose
@@ -88,11 +90,13 @@ def fall_detected(landmarks, mp_pose):
     # Calculating the spine angle
     spine_angle = calculate_angle(shoulder_mid, hip_mid, neck)
     
+
     # Fall detection logic
     if spine_angle > 20 or nose.y > shoulder_mid[1]:
+        print(fall_detected)
+
         return True  # Fall detected
         
-    
     return False  # No fall detected
 
 def send_alert_call():

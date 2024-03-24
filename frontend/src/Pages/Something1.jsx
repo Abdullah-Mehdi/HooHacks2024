@@ -8,9 +8,11 @@ const Something1 = () => {
       fetch('http://127.0.0.1:5000/fall-detected')
         .then(response => response.json())
         .then(data => {
-          if (data.fallDetected && !fallDetected) {
+          if (data.fallDetected) {
             setFallDetected(true);
-            // Trigger the call when a fall is detected for the first time
+            // Assuming you want to stop polling after a fall is detected
+            clearInterval(interval);
+            // Trigger the call
             fetch('http://127.0.0.1:5000/trigger-call', { method: 'POST' })
               .then(response => response.json())
               .then(data => console.log(data.message))
@@ -20,11 +22,11 @@ const Something1 = () => {
         .catch(error => {
           console.error('Error fetching fall detection status:', error);
         });
-    }, 1000); // Poll every 1000 milliseconds (1 second)
-
+    }, 500); // Poll every 500 milliseconds (0.5 second)
+  
     return () => clearInterval(interval);
-  }, [fallDetected]);
-
+  }, []);
+  
   return (
     <div>
       <header>
@@ -37,7 +39,8 @@ const Something1 = () => {
           <p style={{ color: 'red', fontWeight: 'bold', fontSize: '24px' }}>
             Fall Detected!
           </p>
-        )}
+        )
+      }
       </header>
     </div>
   );
