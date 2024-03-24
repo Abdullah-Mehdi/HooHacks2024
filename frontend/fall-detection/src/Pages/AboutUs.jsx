@@ -16,9 +16,10 @@ const AboutUs = () => {
                     <Information></Information>
                 </ParallaxLayer>
                 <ParallaxLayer offset={1} speed={0.5}>
-                    <Information></Information>
+                <Information></Information>
                 </ParallaxLayer>
             </Parallax>
+            <Information></Information>
 
             
         </div>
