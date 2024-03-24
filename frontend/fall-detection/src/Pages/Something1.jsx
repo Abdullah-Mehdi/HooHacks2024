@@ -1,28 +1,21 @@
-// import React from 'react';
-// import VideoStream from '../VideoStream';
-
-// const Something1 = () => {
-//     return(
-//         <div>   
-           
-//         </div>
-//     );
-// };
-
-// export default Something1;
-
 import React, { useEffect, useState } from 'react';
 
 const Something1 = () => {
   const [fallDetected, setFallDetected] = useState(false);
 
-  // Poll the backend to check for fall detection
   useEffect(() => {
     const interval = setInterval(() => {
       fetch('http://127.0.0.1:5000/fall-detected')
         .then(response => response.json())
         .then(data => {
-          setFallDetected(data.fallDetected);
+          if (data.fallDetected && !fallDetected) {
+            setFallDetected(true);
+            // Trigger the call when a fall is detected for the first time
+            fetch('http://127.0.0.1:5000/trigger-call', { method: 'POST' })
+              .then(response => response.json())
+              .then(data => console.log(data.message))
+              .catch(error => console.error('Error triggering call:', error));
+          }
         })
         .catch(error => {
           console.error('Error fetching fall detection status:', error);
@@ -30,7 +23,7 @@ const Something1 = () => {
     }, 1000); // Poll every 1000 milliseconds (1 second)
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fallDetected]);
 
   return (
     <div>
