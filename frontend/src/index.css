@@ -7,6 +7,8 @@ body {
   min-height: 100vh;
   background: url(./Components/Assets/background.png) no-repeat;
   backgroundAttachment: scroll;
+  background-size: cover; /* Cover entire background area */
+  background-attachment: fixed; /* Fixed background relative to viewport */
 }
 
 code {
