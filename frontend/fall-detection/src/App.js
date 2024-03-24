@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/webcam" alt="Webcam Feed" style={{ width: '640px', height: '480px' }} />
+        <img src="http://127.0.0.1:5000/webcam" alt="Webcam Feed" style={{ width: '640px', height: '480px' }} />
         {fallDetected && (
           <p style={{ color: 'red', fontWeight: 'bold', fontSize: '24px' }}>
             Fall Detected!
