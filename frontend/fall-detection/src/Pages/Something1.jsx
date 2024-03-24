@@ -19,7 +19,7 @@ const Something1 = () => {
   // Poll the backend to check for fall detection
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch('/fall-detected')
+      fetch('http://127.0.0.1:5000/fall-detected')
         .then(response => response.json())
         .then(data => {
           setFallDetected(data.fallDetected);
