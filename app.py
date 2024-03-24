@@ -24,7 +24,7 @@ fall_detection_status = False
 
 def webcam():
     global fall_detection_status
-    camera = cv2.VideoCapture(0)
+    camera = cv2.VideoCapture(0)pip
 
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while True:
