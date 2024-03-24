@@ -1,9 +1,9 @@
 # HooHacks2024
 Fall Detection Software with Front-end
 
-The Backend uses `Python` version 3.11.x with `OpenCV`, `MediaPipe`, `Numby`
+The Backend uses `Python` version 3.11.x with `OpenCV`, `MediaPipe`, `Numby`, and `Twilio`
 
-The Frontend uses `ReactJS` and `JavaScript` with `Twilio`
+The Frontend uses `ReactJS` and `JavaScript` 
 
 The connection between the two is done via `Flask`
 
@@ -12,7 +12,7 @@ The connection between the two is done via `Flask`
 The main functionality is with `OpenCV`, `MediaPipe`, `Numby`.
 Using the users' camera as input the program determines if it has detected a fall, and will continue to take live input until exited with either 'q' or a fall detection.
 
-If the user falls a message is displayed to notify that a fall was detected, the frame in which it was detected is captured, and a phone call is placed to the number on file via the frontend/`Twilio`.
+If the user falls a message is displayed to notify that a fall was detected, the frame in which it was detected is captured, and a phone call is placed to the number on file via `Twilio`.
 
 # Frontend
 
