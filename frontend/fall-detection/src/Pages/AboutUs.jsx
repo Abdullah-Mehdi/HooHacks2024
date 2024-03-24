@@ -9,14 +9,17 @@ const AboutUs = () => {
                 offset={0} 
                 speed={1}
                 factor={2}
-                bgImage = '../Components/Assets/stock-image1'
-                >
-                <Information></Information>
+                style = {{
+                    backgroundImage: 'url(${stock-image1})',
+                    backgroundSize: 'cover',
+                }}>
+                    <Information></Information>
                 </ParallaxLayer>
                 <ParallaxLayer offset={1} speed={0.5}>
-                <Information></Information>
+                    <Information></Information>
                 </ParallaxLayer>
             </Parallax>
+
             
         </div>
     );

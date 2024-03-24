@@ -2,12 +2,12 @@
     position: fixed; /* Position the navbar fixed at the top */
     top: 0; /* Place the navbar at the top of the viewport */
     width: 100%; /* Make the navbar span the full width of the viewport */
-    background-color: white; /* Set the background color */
+    background-color: transparent; /* Set the background color */
+    backdrop-filter: blur(5px);
     z-index: 1000; /* Ensure the navbar appears above other content */
     display: flex;
     justify-content: space-around;
     padding: 4px;
-    box-shadow: 0 1px 3px -2px black;
 }
 .nav-logo{
     display: flex;
