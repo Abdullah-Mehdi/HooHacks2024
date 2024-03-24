@@ -1,10 +1,10 @@
-from flask import Flask, Response, jsonify, stream_with_context
+from flask import Flask, Response, jsonify, stream_with_context, send_from_directory
 import cv2
 import numpy as np
 import mediapipe as mp
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='build', static_url_path='')
 
 # Initialize MediaPipe Pose
 mp_pose = mp.solutions.pose
@@ -42,9 +42,9 @@ def webcam():
 
         camera.release()
 
-@app.route('/webcam')
-def webcam_display():
-    return Response(stream_with_context(webcam()), mimetype='multipart/x-mixed-replace; boundary=frame')
+@app.route('/')
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 def calculate_angle(a, b, c):
     # Calculate the angle between three points.
@@ -92,4 +92,4 @@ def check_fall_detected():
     return jsonify({'fallDetected': fall_detection_status})
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded=True)
+    app.run(use_reloader=True, port=5000, threaded=True)

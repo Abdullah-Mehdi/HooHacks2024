@@ -8,9 +8,28 @@
 }
 
 .content h1 {
-    color:#FF99BF;
+    color:#fff;
 }
 
 .content h3 {
     color:#004B84;
 }
+.carousel {
+    width: 50%; 
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.carousel-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.carousel-container img{
+    border-radius: 75px;
+}
+
+  

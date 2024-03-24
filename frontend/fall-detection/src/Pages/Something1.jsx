@@ -35,7 +35,11 @@ const Something1 = () => {
   return (
     <div>
       <header>
-        <img src="http://127.0.0.1:5000/webcam" alt="Webcam Feed" style={{ width: '640px', height: '480px' }} />
+        <img src="http://127.0.0.1:5000/webcam" alt="Webcam Feed" 
+        style={{ 
+          width: '640px', 
+          height: '480px',
+          margin: '200px'}} />
         {fallDetected && (
           <p style={{ color: 'red', fontWeight: 'bold', fontSize: '24px' }}>
             Fall Detected!
