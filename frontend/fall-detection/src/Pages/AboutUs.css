@@ -1,0 +1,33 @@
+.animation, .animation-layer{
+    height: 1000px;
+}
+.animation {
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+.animation-layer{
+    background-position: bottom center;
+    background-size: auto 1038px;
+    background-repeat: repeat-x;
+    width: 100%;
+    position: absolute;
+}
+.animation-layer parallax {
+    position: fixed;
+}
+#4-removebg-preview{
+    background-image: url('../Components/Assets/4-removebg-preview.png');
+}
+#1-removebg-preview{
+    background-image: url('../Components/Assets/1-removebg-preview.png');
+}
+#2-removebg-preview{
+    background-image: url('../Components/Assets/2-removebg-preview.png');
+}
+#3-removebg-preview{
+    background-image: url('../Components/Assets/3-removebg-preview.png');
+}
+#5-removebg-preview{
+    background-image: url('../Components/Assets/5-removebg-preview.png');
+}

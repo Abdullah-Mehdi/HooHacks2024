@@ -41,10 +41,10 @@ const ResearchMarket = () => {
                 <div className='carousel-container'>
                     <img src={image1} alt="img1" className='carousel'/>
                 </div>
-                <div>
+                <div className='carousel-container'>
                     <img src={image2} alt="img2" className='carousel'/>
                 </div>
-                <div>
+                <div className='carousel-container'>
                     <img src={image3} alt="img3" className='carousel'/>
                 </div>
             </Slider>

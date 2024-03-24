@@ -57,13 +57,13 @@
     cursor: pointer;
 }
 .nav-login button:active{
-    background: #FF99BF;
+    background: #FFC8DD;
 }
 .nav-menu hr{
     border: none;
     width: 80%;
     height: 3px;
     border-radius: 10px;
-    background: #FF99BF;
+    background: #fff;
 
 }
