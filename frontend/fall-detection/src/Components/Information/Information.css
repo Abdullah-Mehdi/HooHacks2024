@@ -14,3 +14,19 @@
 .content h3 {
     color:#004B84;
 }
+.carousel {
+    width: 50%; 
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.carousel-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+  

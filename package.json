@@ -1,5 +1,6 @@
 {
   "dependencies": {
     "socket.io-client": "^4.7.5"
+    "proxy": "http://localhost:5000"
   }
 }
