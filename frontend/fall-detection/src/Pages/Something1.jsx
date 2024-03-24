@@ -1,9 +1,10 @@
 import React from 'react';
+import VideoStream from '../VideoStream';
 
 const Something1 = () => {
     return(
-        <div>
-            Heloo this is different page
+        <div>   
+           <VideoStream></VideoStream>
         </div>
     );
 };
