@@ -14,7 +14,7 @@ Using the users' camera as input the program determines if it has detected a fal
 
 If the user falls a message is displayed to notify that a fall was detected, the frame in which it was detected is captured, and a phone call is placed to the number on file via `Twilio`.
 
-Note: You will have to create your own `.env` file in the src folder to get the `Twilio` call function up and running.
+Note: You will have to create your own `.env` file with a SID and Token in the src folder to get the `Twilio` call function up and running.
 
 # Frontend
 
