@@ -20,7 +20,7 @@ CORS(app)
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose()
 mp_draw = mp.solutions.drawing_utils
-
+ 
 # Global variable to indicate fall detection status
 fall_detection_status = False
 
