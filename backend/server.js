@@ -1,30 +1,25 @@
-const express = require("express");
-const mysql = require('mysql');
-const cors = require('cors');
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import { connectDB } from "./config/db.js";
+import userRoutes from "./routes/user.route.js";
+
+dotenv.config();
 
 const app = express();
-app.use(cors());
+const port = process.env.PORT || 5000;
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password:"",
-    database: "signup"
-})
-app.post('/signup',(req, res) => {
-    const sql = "INSERT INTO login ('name' , 'email', 'password') VALUES (?)";
-    const values = [
-        req.body.name,
-        req.body.email,
-        req.body.password
-    ]
-    db.query(sql, [values], (err, data)=>{
-        if (err){
-            return res.json("Error");
-        }
-        return res.json(data);
-    })
-})
-app.listen(3306,() => {
-    console.log("listening");
-})
+app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+
+app.use(cors());
+app.use("/api/users", userRoutes);
+
+app.listen(port, () => {
+    connectDB();
+    console.log(`${port} is up and kicking`);
+});
